@@ -1,6 +1,6 @@
-# Sarthi OS
+# Sarthi
 
-Sarthi OS is an AI-powered platform for generating web applications, websites, or operating systems based on user-provided input files in PDF format. The platform leverages machine learning models to interpret input and generate code, images, and UI designs.
+Sarthi is an AI-powered platform for generating web applications, websites, or operating systems based on user-provided input files in PDF format. The platform leverages machine learning models to interpret input and generate code, images, and UI designs.
 
 ## Setup
 
