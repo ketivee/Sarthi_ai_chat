@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarthi AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px 0;
+        }
+        .upload-chat-section {
+            margin-bottom: 40px;
+        }
+        .upload-chat-section h2, .chat-container h3 {
+            color: #333;
+        }
+        .upload-chat-section form, .chat-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .upload-chat-section form input, .upload-chat-section form button, .chat-container form input, .chat-container form button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+        }
+        .chat-container {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            margin-top: 20px;
+        }
+        .chat-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .chat-messages {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 400px;
+            height: 200px;
+            overflow-y: auto;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: white;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Sarthi AI</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="upload-chat-section">
+                <h2>Upload Your File</h2>
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file" id="file" required>
+                    <button type="submit">Upload</button>
+                </form>
+            </section>
+            <div class="chat-container">
+                <div class="chat-box">
+                    <div class="chat-header">
+                        <h3>Chat with AI</h3>
+                    </div>
+                    <div class="chat-messages" id="chat-messages">
+                        <!-- Chat messages will be appended here -->
+                    </div>
+                    <form id="chat-form">
+                        <input type="text" id="chat-input" placeholder="Type a message..." required>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sarthi AI. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='chat.js') }}"></script>
+</body>
+</html>
